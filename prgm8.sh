@@ -5,14 +5,17 @@ exit
 fi
 
 echo "No of arguments $#"
-for a in $@
+echo "Inputted string : "
+num=1
+for i in $@
 do
-echo "$a"
+echo "arg$num is $i"
+num=$(($num+1))
 done
-
+echo "Arguments in reverse order : "
 num=$#
-while [ $num -gt 0 ]
+while [ $num -ne 0 ]
 do
 eval echo "arg$num is \$$num"
-num=$((num-1))
-done
+num=$(($num-1))
+done 
